@@ -10,11 +10,19 @@ public class Recipe
     public string Title { get; set; } = "";
 
     [Required]
+    public string Description { get; set; } = "";
+
+    public int PreparationTimeMinutes { get; set; }
+
+    public int Servings { get; set; }
+
+    [Required]
     public string Instructions { get; set; } = "";
 
-    [Display(Name = "Categoría")]
-    public int CategoryId { get; set; }
+    public DateTime DateCreated { get; set; } = DateTime.Now;
 
+    public int CategoryId { get; set; }
     public Category? Category { get; set; }
+
     public List<Ingredient> Ingredients { get; set; } = new();
 }
